@@ -7,7 +7,7 @@ import scala.util.{Failure, Success, Try}
 object GoogleClient {
 
   def search(search: String): Either[Error, String] = {
-    val url = s"https://www.google.com/search"
+    val url = s"http://localhost:3000/users/greet"
 
     val connectionTry = Try({
       val response: HttpResponse[String] = Http(url).param("q", search).asString
